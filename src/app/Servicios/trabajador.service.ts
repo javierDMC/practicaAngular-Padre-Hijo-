@@ -63,11 +63,22 @@ export class TrabajadorService {
   return this.trabajadores;
  }
 
- sumaVotos(id:number){}
+ sumaVotos(id:number){
+  let pos=this.trabajadores.findIndex(t=>t.id==id);
+  this.trabajadores[pos].votos++;
+ }
 
- restaVotos(id:number){}
+ restaVotos(id:number){
+  let pos=this.trabajadores.findIndex(t=>t.id==id);
+  if(this.trabajadores[pos].votos==0){
+    alert ("No se pueden poner negativos")
+  }else{
+    this.trabajadores[pos].votos--;
+  }
+ }
 
  borrar(id:number){
   let pos=this.trabajadores.findIndex(t=>t.id==id);
+  this.trabajadores.splice(pos,1);
  }
 }
