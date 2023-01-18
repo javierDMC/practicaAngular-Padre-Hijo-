@@ -58,4 +58,16 @@ export class TrabajadorService {
       votos:0
     }
  ]
+
+ getTrabajadores(){
+  return this.trabajadores;
+ }
+
+ sumaVotos(id:number){}
+
+ restaVotos(id:number){}
+
+ borrar(id:number){
+  let pos=this.trabajadores.findIndex(t=>t.id==id);
+ }
 }
