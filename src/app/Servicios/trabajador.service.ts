@@ -63,6 +63,15 @@ export class TrabajadorService {
   return this.trabajadores;
  }
 
+ getTrabajador(id:number){
+  // let trabajador:Trabajador | undefined;
+  // trabajador=this.trabajadores.find(t=>t.id==id);
+  // return trabajador;
+  let pos:number;
+  pos=this.trabajadores.findIndex(t=>t.id==id);
+  return this.trabajadores[pos];
+ }
+
  sumaVotos(id:number){
   let pos=this.trabajadores.findIndex(t=>t.id==id);
   this.trabajadores[pos].votos++;

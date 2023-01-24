@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Trabajador } from '../Modelos/trabajador';
 import { ActivatedRoute } from '@angular/router';
-
+import { TrabajadorService } from '../Servicios/trabajador.service';
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
@@ -10,10 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 export class ClienteComponent {
   cliente!:Trabajador;
 
-constructor(private rutaActiva:ActivatedRoute){}
+constructor(private rutaActiva:ActivatedRoute,
+            private servicioTrabajadores:TrabajadorService){}
 
 ngOnInit(){
-  let dato= this.rutaActiva.snapshot.params["id"];
-  alert("Nos han pasado: " + dato)
+  let id= this.rutaActiva.snapshot.params["id"];
+  this.cliente=this.servicioTrabajadores.getTrabajador(id);
 }
 }
