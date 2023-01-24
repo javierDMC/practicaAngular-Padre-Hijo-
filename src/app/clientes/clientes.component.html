@@ -1,1 +1,10 @@
-<p>clientes works!</p>
+<h2>Listado de clientes</h2>
+
+<table>
+  <!-- hemos declarado la variable clientes en el ts -->
+  <tr *ngFor="let cliente of clientes">
+    <td>{{cliente.id}}</td>
+    <td>{{cliente.nombre}}</td>
+    <td><button class="btn btn-warning" routerLink="/clientes/{{cliente.id}}">Ver</button></td>
+  </tr>
+</table>
