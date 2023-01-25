@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { Error404Component } from './error404/error404.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Error404Component } from './error404/error404.component';
     HeaderComponent,
     InicioComponent,
     ClientesComponent,
-    Error404Component
+    Error404Component,
+    ClienteComponent
   ],
   imports: [
     BrowserModule,
